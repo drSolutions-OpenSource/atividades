@@ -1,0 +1,147 @@
+<!--
+Sistema para gerenciar a lista de atividades (to do list)
+PHP 7.0 (ou superior) com SQLite
+
+@author  Diego Mendes Rodrigues
+@since   Julho/2021
+@version 1.0
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Atividades de Diego Mendes Rodrigues">
+    <meta name="Snippet" content="Atividades de Diego Mendes Rodrigues">
+    <meta name="author" content="Diego Mendes Rodrigues">
+    <meta name="copyright" content="2021 - drSolutions. Todos os direitos Reservados." />
+	<meta name="robots" content="home, follow">
+    <meta name="keywords" content="diego, mendes, rodrigues, atividades">
+    <title>Atividades | Diego Mendes Rodrigues</title>
+    <link rel="shortcut icon" href="https://localhost/atividades/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link href="css/estilos.css" rel="stylesheet">
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </head>
+
+  <body>
+    <table class="tabela_principal">
+        <tr class="linha_topo">
+            <td>
+                <!-- Cabeçalho -->
+                <table class="tabela_topo">
+                    <tr>
+                        <td width='30px'>&nbsp;</td>
+                        <td width='50px'><img src="imagens/logotipo.png" alt="Atividades"></td>
+                        <td><span class="fonte_topo">Atividades</span></td>
+                        <td width='80px' class="alinhar_direita">
+                            <a href="atividade.php" title="Incluir uma atividade"><img src='imagens/incluir.png' alt="Incluir uma atividade"></a>
+                        </td>
+                        <td width='80px' class="alinhar_direita">
+                          <a href="sair.php" title="Sair do sistema"><img src="imagens/logout.png" alt="Sair do sistema"></a>
+                        </td>
+                        <td width='30px'>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="linha_principal">
+            <td>
+                <!-- Conteúdo -->
+                <table class="tabela_esquerda">
+                    <tr>
+                        <td width='30px' height='30px' class="linha_tabela_esquerda">&nbsp;</td>
+                        <td width='200px' class="linha_tabela_esquerda">&nbsp;</td>
+                        <td width='30px'>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td width='30px'>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width='30px' class="linha_tabela_esquerda">&nbsp;</td>
+                        <td width='200px' class="linha_tabela_esquerda">
+                            <!-- Conteúdo - Barra lateral Cinza -->
+                            <table>
+                                <tr>
+                                    <td width='30px' height='30px'>
+                                        <img src="imagens/todas_atividades.png">
+                                    </td>
+                                    <td width='170px'>
+                                        &nbsp;&nbsp;<a href="index.php">Todas as atividades</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height='30px'>
+                                        <img src="imagens/hoje.png">
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;<a href="index.php?hoje=1">Hoje</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height='30px'>
+                                        <img src="imagens/em_breve.png">
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;<a href="index.php?breve=1">Em breve</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height='30px'>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="linha_categorias">
+                                        <img src="imagens/seta.png">
+                                    </td>
+                                    <td class="linha_categorias">
+                                        <table width="100%">
+                                            <tr>
+                                                <td>&nbsp;&nbsp;<span class="texto_linha_categorias">Categorias</span></td>
+                                                <td height='30px' width='60px'>
+                                                    <a href="categorias.php">
+                                                        <img src="imagens/categorias.png">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height='5px'></td>
+                                    <td></td>
+                                </tr>
+#@CATERORIAS@#                                
+                            </table>
+                        </td>
+                        <td width='30px'>&nbsp;</td>
+                        <td class="linha_tabela_esquerda_centro">
+                            <div class="div_sim_nao div_sim_nao_concluir" name="confirmar" id="confirmar">
+                                <br/>Confirma a conclusão dessa atividade?<br/><br/>
+                                <input type="button" value="Sim" class="botao_sim_nao" onclick="javascript:btn_conclusao_sim();">
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="button" value="Não" class="botao_sim_nao" onclick="javascript:btn_conclusao_nao();">
+                            </div>
+                            <div class="div_sim_nao" name="excluir" id="excluir">
+                                <br/>Confirma a exclusão dessa atividade?<br/><br/>
+                                <input type="button" value="Sim" class="botao_sim_nao" onclick="javascript:btn_excluir_sim();">
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="button" value="Não" class="botao_sim_nao" onclick="javascript:btn_excluir_nao();">
+                            </div>
+                            <div class="div_sim_nao" name="excluir_categoria" id="excluir_categoria">
+                                <br/>Confirma a exclusão dessa categoria?<br/><br/>
+                                <input type="button" value="Sim" class="botao_sim_nao" onclick="javascript:btn_excluir_categoria_sim();">
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="button" value="Não" class="botao_sim_nao" onclick="javascript:btn_excluir_categoria_nao();">
+                            </div>
+                            <!-- Conteúdo - Centro (Início)-->
+#@CENTRO@#
+                            <!-- Conteúdo - Centro (Fim)-->
+                        </td>
+                        <td width='30px'>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+  </body>
+</html>

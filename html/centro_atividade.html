@@ -1,0 +1,59 @@
+                            <table class="tabela_atividades">
+                                <tr>
+                                    <td>
+                                        <span class="texto_cabecalho_centro">Atividade</span>
+                                    </td>
+                                    <td width='40px' height='30px'>
+                                        <a href="index.php">
+                                            <img src="imagens/excluir.png" title="Descartar">
+                                        </a>
+                                    </td>
+                                    <td width='50px' height='30px' align="right">
+                                        <a href="javascript:enviar();">
+                                            <img src="imagens/salvar.png" title="Salvar" width="25">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+
+                            <form name="formatividade" id="formatividade" method="POST" action="atividade.php">
+                                <table class="tabela_atividades">
+                                    <tr>
+                                        <td>
+                                            <label for="ftitulo">Título</label><br>
+                                            <input type="text" id="ftitulo" name="ftitulo" required="required" value="#@TITULO@#"><br>
+                                        </td>
+                                        <td width='40px'>&nbsp;&nbsp;&nbsp;</td>
+                                        <td width='150px'>
+                                            <label for="fdata">Data</label><br>
+                                            <input type="date" id="fdata" name="fdata" required="required" value="#@DATA@#"><br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height='15px'></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <label for="ldescricao">Descrição</label><br>
+                                            <textarea rows="4" cols="50" name="fdescricao">#@DESCRICAO@#</textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height='15px'></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <label for="fcategoria">Categoria</label><br>
+                                            <select name="fcategoria" id="fcategoria">
+#@SELECT_CATEGORIAS@#
+                                                <!-- <option value="1" #@SELECT1@#>Geral</option>
+                                                <option value="2" #@SELECT2@#>Pessoal</option>
+                                                <option value="3" #@SELECT3@#>Trabalho</option>
+                                                <option value="4" #@SELECT4@#>Viagens</option> -->
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="hidden" id="fid" name="fid" value="#@ID@#">
+                            </form>

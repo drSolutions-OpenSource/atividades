@@ -1,0 +1,41 @@
+                            <table class="tabela_atividades">
+                                <tr>
+                                    <td>
+                                        <span class="texto_cabecalho_centro">Categoria</span>
+                                    </td>
+                                    <td width='40px' height='30px'>
+                                        <a href="categorias.php">
+                                            <img src="imagens/excluir.png" title="Descartar">
+                                        </a>
+                                    </td>
+                                    <td width='50px' height='30px' align="right">
+                                        <a href="javascript:enviar_categoria();">
+                                            <img src="imagens/salvar.png" title="Salvar" width="25">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+
+                            <form name="formcategoria" id="formcategoria" method="POST" action="categoria.php">
+                                <table class="tabela_atividades">
+                                    <tr>
+                                        <td>
+                                            <label for="fnome">Nome</label><br>
+                                            <input type="text" id="fnome" name="fnome" required="required" value="#@NOME@#"><br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height='15px'></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="fcor">Cor</label><br>
+                                            <select name="fcor" id="fcor">
+#@SELECT_CORES@#
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="hidden" id="fid" name="fid" value="#@ID@#">
+                            </form>

@@ -1,0 +1,191 @@
+/**
+ * Folhas de estilo
+ *
+ * Sistema para gerenciar a lista de atividades (to do list)
+ * PHP 7.0 (ou superior) com SQLite
+ *
+ * @author  Diego Mendes Rodrigues
+ * @since   Julho/2021
+ * @version 1.0
+ */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+table, tr, td {
+    border: none;
+    border-collapse: collapse;
+}
+
+a {
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    font-size: 12px;
+    text-decoration:underline;
+}
+.a_atividade {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+}
+.a_atividade:hover {
+    color: black;
+    font-size: 14px;
+    text-decoration:underline;
+}
+
+input {
+    width: 100%;
+    height: 25px;
+    background-color: #fce7e7;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+input:focus {
+    outline:none!important;
+}
+textarea {
+    width: 100%;
+    height: 60px;
+    background-color: #fce7e7;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+textarea:focus {
+    outline:none!important;
+}
+select {
+    width: 101%;
+    height: 25px;
+    background-color: #fce7e7;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+select:focus {
+    outline:none!important;
+}
+label {
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    height: 23px;
+}
+
+
+.tabela_topo {
+    width: 100%;
+    height: 70px;
+    background-color: #DC4C3F;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    border-collapse: collapse;
+}
+.linha_topo {
+    height: 70px;
+}
+.fonte_topo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.alinhar_direita {
+    text-align: right;
+}
+
+.tabela_principal {
+    height: 100%;
+    width: 100%; 
+    position: absolute; 
+    background-color: #FFF;
+    vertical-align: top;
+    border: none;
+    border-collapse: collapse;
+}
+
+.linha_principal {
+    vertical-align: top;
+}
+
+.tabela_esquerda {
+    background-color: #FFF;
+    height: 100%;
+    width: 100%;
+    position: relative; 
+    vertical-align: top;
+    border: none;
+    border-collapse: collapse;
+}
+.linha_tabela_esquerda {
+    vertical-align: top;
+    background-color: #E0E0E0;
+}
+.linha_tabela_esquerda_centro {
+    vertical-align: top;
+    position: relative;
+}
+.linha_categorias {
+    height: 40px;
+    border-bottom: 1px solid;
+    border-color: #a6a6a6;
+}
+.texto_linha_categorias {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.texto_cabecalho_centro {
+    font-size: 18px;
+    font-weight: bold;
+}
+.tabela_atividades {
+    background-color: #FFF;
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+.texto_data {
+    color: #BFBFBF;
+}
+.texto_detalhes {
+    color: #7F7F7F;
+}
+.linha_atividade {
+    height: 5px;
+    border-bottom: 1px solid;
+    border-color: #a6a6a6;
+}
+
+.div_sim_nao {
+    width: 300px;
+    height: 85px; 
+    background-color: rgb(202, 202, 202);
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    border-color: #DC4C3F;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    left:50%;
+    top:50%;
+    margin-left:-150px;
+    margin-top:-142px;
+    position:absolute;
+    visibility:hidden;
+}
+.div_sim_nao_concluir {
+    border-color: #005713!important; 
+}
+.botao_sim_nao {
+    width: 100px;
+}
