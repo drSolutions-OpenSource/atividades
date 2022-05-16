@@ -1,12 +1,12 @@
 # Sistema para gerenciar a lista de atividades (to do list)
 
-Tecnologias: PHP 7.0 (ou superior) com SQLite 3.36 (ou superior)
- 
-Author: Diego Mendes Rodrigues
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-Data: Julho/2021
+Este sistema on-line disponibiliza uma lista de atividades a serem realizadas.
 
-Versão: 1.0
+As tecnologias na sua criação foram: PHP 7.0 (ou superior) com SQLite 3.36 (ou superior).
+
+# Instalação
 
 ## Instalar o SQLite3 no PHP
 
@@ -45,3 +45,29 @@ To activate the new configuration, you need to run:
 # Reiniciar o Apache para aplicar as alterações
 root@www:~# systemctl restart apache2
 ```
+
+# Recursos
+
+- Atividades separdas por categorias
+- Data de conclusão das atividades
+- Descrição das atividades
+- Acesso web e móvel
+
+# Contribuindo para este projeto
+
+Este repositório é gerenciado pela drSolutions.
+
+Você pode encontrar a informalção detalhada para contribuir [neste documento](CONTRIBUTING.md).
+
+
+# FAQ
+
+**Quem pode utilizar essa ferramenta?**
+
+Qualquer pessoa pode utilizar, basta possuir um servidor web, com o PHP instalado.
+
+**Quem pode contribuir?**
+
+Qualuer desenvolvedor pode contribuir, sendo muito bem-vindo! Caso queira contribuir, veja nosso Código de Conduta | [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+
+<center><b>We are open source!</b></center>
